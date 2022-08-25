@@ -8,6 +8,7 @@
         
     async function getNftList() {
         const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/getWalletTokens/0x5f927157539C9f690F1f381c8Ba6Add22d84325C`)
+        console.log();
         // const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/getWalletTokens/${selectedAccount}`)
         const nfts = await res.json()
 
@@ -25,7 +26,7 @@
 </script>
 
 <div class="index">
-    <p>Portfolio Page</p>
+    <h2>NFTs</h2>
     <p>USER ADDRESS : {$selectedAccount}</p>
     {#await nft_list}
 	<p>...LOADING</p>
@@ -54,5 +55,14 @@
         flex-direction: row;
         gap:50px;
         justify-content : center;
+        
+    }
+
+    .item{
+        background-color: #211724;
+        border: 16px solid transparent;
+        border-image: linear-gradient(45deg, red , yellow);
+        border-image-slice: 1;
+        padding: 30px;
     }
 </style>

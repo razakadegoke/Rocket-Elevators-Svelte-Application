@@ -11,6 +11,7 @@
 
 <style>
     .header{
+        background-color: #211724;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
