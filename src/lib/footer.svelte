@@ -1,4 +1,5 @@
-<script></script>
+<script>
+</script>
 
 <div class="footer">
     <p>Footer</p>

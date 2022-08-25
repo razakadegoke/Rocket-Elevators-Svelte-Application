@@ -21,5 +21,11 @@
 		"typescript": "^4.7.4",
 		"vite": "^3.0.4"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@metamask/detect-provider": "^1.2.0",
+		"metamask": "^0.0.1-security",
+		"svelte-web3": "^3.5.2",
+		"web3": "^1.7.5"
+	}
 }
