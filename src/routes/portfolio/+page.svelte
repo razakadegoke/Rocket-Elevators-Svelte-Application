@@ -7,7 +7,8 @@
         await defaultEvmStores.setProvider()})
         
     async function getNftList() {
-        const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/getWalletTokens/${$selectedAccount}`)
+        // const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/getWalletTokens/${$selectedAccount}`)
+        const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/getWalletTokens/0x1E90cf48F11Dd52802eC7D1AF7082122A6a59312`)
         const nfts = await res.json()
 
         if (res.ok) {
@@ -53,6 +54,7 @@
 
     .list {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         gap:50px;
         justify-content : center;

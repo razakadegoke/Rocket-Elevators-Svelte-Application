@@ -1,9 +1,54 @@
-<script></script>
+<script>
+    import { onMount } from "svelte"
+    import { selectedAccount, defaultEvmStores} from "svelte-web3"
+    
+    let balance = 0
+
+    const getUserBalance = async () => {
+        const res = await fetch(`https://express-api.codeboxxtest.xyz/ERC20/balance/${$selectedAccount}`)
+        const rep = await res.json()
+
+        if (res.ok) {
+            console.log(`SUCCEED: ${res.status}`)
+            console.log(`USER BALACE : ${rep}`)
+            return rep
+        }else{
+            console.log(`ERROR: ${res.status}`)
+            return 0
+        }
+    }
+    const generateNft = async () => {
+        const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/buyWithRocket/${$selectedAccount}`,{
+            method: "POST"
+        })
+        const rep = await res.text()
+
+        if (res.ok) {
+            console.log(`SUCCEED: ${res.status}`)
+            return rep
+        }else{
+            console.log(`ERROR: ${res.status}`)
+        }
+    }   
+
+    onMount(async () => {
+        await defaultEvmStores.setProvider()
+        balance = await getUserBalance() 
+    })
+
+</script>
 
 <div class="mint">
     <h2>GENERATE NEW NFT</h2>
+    <p>Your address : {$selectedAccount}</p>
+    <p>Your ROCKET TOKEN balance : {balance}</p>
+    {#if balance < 100}
+        <p>Sorry you don't have enough ROCKET TOKEN</p>
+        <button><a href="/">GO HOME</a></button>
+    {:else}
+        <button on:click={generateNft}>GET ONE</button>
+    {/if}
     <iframe src="https://giphy.com/embed/wRCu1p7zjO2BQWgFNk" width="480" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-    <button>GET ONE</button>
 </div>
 
 <style>
