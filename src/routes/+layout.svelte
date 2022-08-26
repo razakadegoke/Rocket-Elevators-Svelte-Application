@@ -17,7 +17,4 @@ import Header from "../lib/header.svelte";
 </footer>
 
 <style>
-    html{
-        background-color: #121212;
-    }
 </style>
