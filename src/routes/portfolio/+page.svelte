@@ -24,7 +24,7 @@
     <h2>NFTs</h2>
     <p>USER ADDRESS : {$selectedAccount}</p>
     {#await nft_list}
-	<p>...LOADING</p>
+	<iframe src="https://giphy.com/embed/pK4av7uBK3I4M" width="480" height="221" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     {:then nft_list}
         {#if nft_list.length === 0}
             <p>No NFTs...</p>
