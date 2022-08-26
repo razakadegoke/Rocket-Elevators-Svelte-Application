@@ -61,7 +61,7 @@
     .item{
         background-color: #211724;
         border: 16px solid transparent;
-        border-image: linear-gradient(45deg, red , yellow);
+        border-image: linear-gradient(45deg, #b51021 , #0873bb);
         border-image-slice: 1;
         padding: 30px;
     }

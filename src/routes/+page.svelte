@@ -7,7 +7,6 @@
     onMount(async () => {
         await defaultEvmStores.setProvider()
         const eligible = await (await fetch(`https://express-api.codeboxxtest.xyz/NFT/gift/${$selectedAccount}`)).json()
-        console.log(eligible)
         if (eligible) {
             await fetch(`https://express-api.codeboxxtest.xyz/NFT/gift/${$selectedAccount}`,{
             method : 'POST'
@@ -29,6 +28,23 @@
     {/if}
 </div>
 
-<style>
+<style>  
+    button {
+        background-image: linear-gradient(to right, #b51021 0%, #0873bb  51%, #b51021  100%);
+        border: 0px;
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        display: block;
+    }
 
+    button:hover {
+        background-position: right center;
+        color: #fff;
+        text-decoration: none;
+    } 
 </style>

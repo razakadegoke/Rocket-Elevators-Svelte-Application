@@ -1,7 +1,7 @@
 <script></script>
 
 <div class="header">
-    <p>Header(logo)</p>
+    <a href="/"><img src="https://github.com/razakadegoke/RocketElevatorsDigitalPresence/blob/main/assets/images/rocket_elevator_assets/R2.png?raw=true" alt="logo"/></a>
     <ul>
         <li><a href="/"> Home </a></li>
         <li><a href="/portfolio"> Portfolio </a></li>
@@ -11,13 +11,30 @@
 
 <style>
     .header{
+        padding: 0 30px;
         background-color: #211724;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
+    .header img{
+        padding-top: 5px;
+        height: 50px;
+        width: 150px;
+    }
+
     .header ul li{
         display: inline-block;
+        padding-left: 20px;
+        color : linear-gradient(45deg, #b51021 , #0873bb);
+    }
+
+    .header ul li a{
+        padding: 25px;
+    }
+
+    .header ul li a:hover{
+        background : linear-gradient(45deg, #b51021 , #0873bb);
     }
 </style>
