@@ -16,19 +16,44 @@
     const goto_portfolio = () => goto("/portfolio")
 </script>
 
-<div>
-    <p>Home Page</p>
-    {#if $selectedAccount != null}
-        <p>Your are connected!</p>
-        <p>Your address : {$selectedAccount}</p>
-        <button on:click={goto_portfolio}>GO TO YOUR PORTFOLIO</button>
-    {:else}
-        <p>Your are not connected!</p>
-        <button on:click={connect_metamask}>CONNECT YOUR ACCOUNT</button>
-    {/if}
+<div class="home">
+    <div class="banner">
+        <h1>DISCOVER, COLLECT, AND CHARITY IN EXTRAORDINARY NFT MARKETPLACE</h1>
+        <p>n aenean posuere lorem risus nec. Tempor tincidunt aenean purus purus vestibulum nibh mi venenatis</p>
+        {#if $selectedAccount != null}
+            <p>Your are connected!</p>
+            <p>Your address : {$selectedAccount}</p>
+            <button on:click={goto_portfolio}>GO TO YOUR PORTFOLIO</button>
+        {:else}
+            <p>Your are not connected!</p>
+            <button on:click={connect_metamask}>CONNECT YOUR ACCOUNT</button>
+        {/if}
+    </div>
 </div>
 
 <style>  
+    .home{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .home p{
+        text-align: left;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        max-width: 28rem;
+    }
+
+    .banner{
+        max-width: 42rem;
+    }
+
+    .banner h1{
+        font-size: 3.75rem;
+        line-height: 1;
+        text-align: left;
+    }
+
     button {
         background-image: linear-gradient(to right, #b51021 0%, #0873bb  51%, #b51021  100%);
         border: 0px;
