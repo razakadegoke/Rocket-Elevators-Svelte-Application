@@ -18,7 +18,8 @@
 
 <div class="home">
     <div class="banner">
-        <h1>DISCOVER, COLLECT, AND CHARITY IN EXTRAORDINARY NFT MARKETPLACE</h1>
+        <h1 style=" background : linear-gradient(45deg, #b51021 , #0873bb);">DISCOVER, COLLECT, AND CHARITY IN EXTRAORDINARY NFT MARKETPLACE</h1>
+        <iframe src="https://giphy.com/embed/3o6ZtikKNHU8eMFaww" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         <p>n aenean posuere lorem risus nec. Tempor tincidunt aenean purus purus vestibulum nibh mi venenatis</p>
         {#if $selectedAccount != null}
             <p>Your are connected!</p>
@@ -32,6 +33,9 @@
 </div>
 
 <style>  
+    h1{
+        background-color: linear-gradient(to right, #b51021 0%, #0873bb  51%, #b51021  100%);
+    }
     .home{
         display: flex;
         justify-content: space-around;

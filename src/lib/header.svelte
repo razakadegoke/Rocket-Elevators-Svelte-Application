@@ -27,7 +27,6 @@
     .header ul li{
         display: inline-block;
         padding-left: 20px;
-        color : linear-gradient(45deg, #b51021 , #0873bb);
     }
 
     .header ul li a{

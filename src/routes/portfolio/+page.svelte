@@ -7,9 +7,7 @@
         await defaultEvmStores.setProvider()})
         
     async function getNftList() {
-        const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/getWalletTokens/0x5f927157539C9f690F1f381c8Ba6Add22d84325C`)
-        console.log();
-        // const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/getWalletTokens/${selectedAccount}`)
+        const res = await fetch(`https://express-api.codeboxxtest.xyz/NFT/getWalletTokens/${$selectedAccount}`)
         const nfts = await res.json()
 
         if (res.ok) {
@@ -20,9 +18,6 @@
     }  
 
     let nft_list = getNftList()
-
-    nft_list.then(res => console.log(res))
-    console.log($selectedAccount)
 </script>
 
 <div class="index">
@@ -31,15 +26,21 @@
     {#await nft_list}
 	<p>...LOADING</p>
     {:then nft_list}
-    <div class="list">
-        {#each nft_list as {name, description, image}}
-            <div class="item">
-                <h3>{name}</h3>
-                <p>{description}</p>
-                <img height="300" src={ image }	alt={ name }/>
+        {#if nft_list.length === 0}
+            <p>No NFTs...</p>
+            <button><a href="/mint">BUY NOW</a></button>
+            <iframe src="https://giphy.com/embed/3o6Zt4oEFxYJQBIk48" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        {:else}
+            <div class="list">
+                {#each nft_list as {name, description, image}}
+                    <div class="item">
+                        <h3>{name}</h3>
+                        <p>{description}</p>
+                        <img height="300" src={ image }	alt={ name }/>
+                    </div>
+                {/each}
             </div>
-        {/each}
-    </div>
+        {/if}
     {:catch error}
         <p style="color: red">{error.message}</p>
     {/await}
@@ -65,4 +66,24 @@
         border-image-slice: 1;
         padding: 30px;
     }
+
+    button {
+        background-image: linear-gradient(to right, #b51021 0%, #0873bb  51%, #b51021  100%);
+        border: 0px;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 15px 45px;
+        text-align: center;
+        display: block;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+    }
+
+    button:hover {
+        background-position: right center;
+        color: #fff;
+        text-decoration: none;
+    } 
 </style>
