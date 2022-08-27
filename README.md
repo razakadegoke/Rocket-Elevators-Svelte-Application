@@ -1,6 +1,6 @@
 # Rocket Elevators Svelte Application
 
-URL for demo : 
+URL for demo : https://rocket-elevators-svelte-application-mocha.vercel.app/
 
 To test it write in the console : 
 ```bash
